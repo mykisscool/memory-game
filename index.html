@@ -1,37 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>The Memory Game</title>
-	<style>
-		html, body { background:#f6f7ea; }
-		#fallback { display:none; margin:20px; }
-		#game-board { display:none; width:500px; height:500px; background:#fbfbfb; border:1px solid #ececec; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; box-shadow:-5px -5px  5px #888; }
-	</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>The Memory Game</title>
+  <style>
+    html, body { background:#f6f7ea; }
+    #fallback { display:none; margin:20px; }
+    #game-board { display:none; width:500px; height:500px; background:#fbfbfb; border:1px solid #ececec; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; box-shadow:-5px -5px  5px #888; }
+  </style>
 </head>
 <body>
-	<p id="fallback">To play the Memory Game- you'll need a browser that supports canvas &amp; audio.</p>
-	<div id="game-board"></div>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
-	<script>
-	(function () { 
-		if (Modernizr.audio && Modernizr.canvas && Modernizr.canvastext) {
+  <p id="fallback">To play the Memory Game- you'll need a browser that supports canvas &amp; audio.</p>
+  <div id="game-board"></div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+  <script>
+  (function () { 
+    if (Modernizr.audio && Modernizr.canvas && Modernizr.canvastext) {
 
-			document.getElementById('game-board').style.display = 'block'; 
+      document.getElementById('game-board').style.display = 'block'; 
 
-			var k = document.createElement('script');
-				k.setAttribute('src', '//cdnjs.cloudflare.com/ajax/libs/kineticjs/5.2.0/kinetic.min.js');
-			document.body.appendChild(k);
+      var k = document.createElement('script');
+        k.setAttribute('src', '//cdnjs.cloudflare.com/ajax/libs/kineticjs/5.2.0/kinetic.min.js');
+      document.body.appendChild(k);
 
-			var g = document.createElement('script');
-				g.setAttribute('src', 'src/js/game.js');
-			document.body.appendChild(g);			
-		} 
-		else {
-			document.getElementById('fallback').style.display = 'block';
-		}
-	})();
-	</script>
+      var g = document.createElement('script');
+        g.setAttribute('src', 'src/js/game.js');
+      document.body.appendChild(g);
+    } 
+    else {
+      document.getElementById('fallback').style.display = 'block';
+    }
+  })();
+  </script>
 </body>
 </html>
