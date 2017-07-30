@@ -13,21 +13,12 @@
 <body>
   <p id="fallback">To play the Memory Game- you'll need a browser that supports canvas &amp; audio.</p>
   <div id="game-board"></div>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+  <script src="dist/memory-game.js"></script>
   <script>
-  (function () { 
+  (function () {
     if (Modernizr.audio && Modernizr.canvas && Modernizr.canvastext) {
-
-      document.getElementById('game-board').style.display = 'block'; 
-
-      var k = document.createElement('script');
-        k.setAttribute('src', '//cdnjs.cloudflare.com/ajax/libs/kineticjs/5.2.0/kinetic.min.js');
-      document.body.appendChild(k);
-
-      var g = document.createElement('script');
-        g.setAttribute('src', 'src/js/game.js');
-      document.body.appendChild(g);
-    } 
+      document.getElementById('game-board').style.display = 'block';
+    }
     else {
       document.getElementById('fallback').style.display = 'block';
     }
