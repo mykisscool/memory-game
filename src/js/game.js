@@ -5,7 +5,7 @@
   @version 1.0.1
   @date 06/09/2012
   @category Canvas game
-  @copyright (c) 2012 (www.mikepetruniak.com)
+  @copyright (c) 2012
   @license Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
 */
 
