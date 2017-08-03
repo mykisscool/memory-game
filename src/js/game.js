@@ -5,7 +5,7 @@
   @version 1.0.1
   @date 06/09/2012
   @category Canvas game
-  @copyright (c) 2012 (www.mikepetruniak.com)
+  @copyright (c) 2012
   @license Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
 */
 
@@ -13,31 +13,31 @@
 window.onload = function () {
 
   // Set up game piece colors
-  var green_on = '#00cd00', 
-    green_off = '#008b45', 
-    yellow_on = '#f3f315', 
-    yellow_off = '#ff9912', 
-    red_on = '#ee0000', 
-    red_off = '#660000', 
-    blue_on = '#0000ee', 
+  var green_on = '#00cd00',
+    green_off = '#008b45',
+    yellow_on = '#f3f315',
+    yellow_off = '#ff9912',
+    red_on = '#ee0000',
+    red_off = '#660000',
+    blue_on = '#0000ee',
     blue_off = '#000060';
 
   // Set up game sounds
-  var green_audio = new Audio(), 
-    yellow_audio = new Audio(), 
-    red_audio = new Audio(), 
+  var green_audio = new Audio(),
+    yellow_audio = new Audio(),
+    red_audio = new Audio(),
     blue_audio = new Audio();
 
-  green_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound1.ogg' : 
+  green_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound1.ogg' :
     Modernizr.audio.mp3 ? 'src/audio/simonSound1.mp3' : 'src/audio/simonSound1.m4a';
 
-  yellow_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound2.ogg' : 
+  yellow_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound2.ogg' :
     Modernizr.audio.mp3 ? 'src/audio/simonSound2.mp3' : 'src/audio/simonSound2.m4a';
 
-  red_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound3.ogg' : 
+  red_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound3.ogg' :
     Modernizr.audio.mp3 ? 'src/audio/simonSound3.mp3' : 'src/audio/simonSound3.m4a';
 
-  blue_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound4.ogg' : 
+  blue_audio.src = Modernizr.audio.ogg ? 'src/audio/simonSound4.ogg' :
     Modernizr.audio.mp3 ? 'src/audio/simonSound4.mp3' : 'src/audio/simonSound4.m4a';
 
   green_audio.preload = 'auto';
@@ -69,7 +69,7 @@ window.onload = function () {
 
   // Green button
   var green_piece = new Kinetic.Shape({
-    drawFunc: 
+    drawFunc:
       function(context) {
         context.beginPath();
         context.moveTo(10, 245);
@@ -86,19 +86,19 @@ window.onload = function () {
     listening:false
   });
 
-  green_piece.on('mouseover', 
+  green_piece.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  green_piece.on('mouseout', 
+  green_piece.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  green_piece.on('click touchstart', 
+  green_piece.on('click touchstart',
     function() {
       this.setFill(green_on);
       objGamePieces[0]['audio'].play();
@@ -108,7 +108,7 @@ window.onload = function () {
         green_piece.setFill(green_off);
         game_board_layer.draw();
         addUserSequence(0);
-      }, 200); 
+      }, 200);
     }
   );
 
@@ -118,7 +118,7 @@ window.onload = function () {
 
   // Yellow button
   var yellow_piece = new Kinetic.Shape({
-    drawFunc: 
+    drawFunc:
       function(context) {
         context.beginPath();
         context.moveTo(255, 10);
@@ -135,19 +135,19 @@ window.onload = function () {
     listening:false
   });
 
-  yellow_piece.on('mouseover', 
+  yellow_piece.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  yellow_piece.on('mouseout', 
+  yellow_piece.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  yellow_piece.on('click touchstart', 
+  yellow_piece.on('click touchstart',
     function() {
       this.setFill(yellow_on);
       objGamePieces[1]['audio'].play();
@@ -157,9 +157,9 @@ window.onload = function () {
         yellow_piece.setFill(yellow_off);
         game_board_layer.draw();
         addUserSequence(1);
-      }, 200); 
+      }, 200);
     }
-  );  	
+  );
 
   // Rotate 45 degrees and move appropriately
   yellow_piece.rotate(Math.PI / 4);
@@ -167,11 +167,11 @@ window.onload = function () {
 
   // Red button
   var red_piece = new Kinetic.Shape({
-    drawFunc: 
+    drawFunc:
       function(context) {
         context.beginPath();
         context.moveTo(490, 255);
-        context.quadraticCurveTo(465, 465, 255, 490); // down and left 
+        context.quadraticCurveTo(465, 465, 255, 490); // down and left
         context.lineTo(255, 335); // up
         context.quadraticCurveTo(325, 325, 335, 255); // right and up
         context.lineTo(490, 255); // right
@@ -184,19 +184,19 @@ window.onload = function () {
     listening:false
   });
 
-  red_piece.on('mouseover', 
+  red_piece.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  red_piece.on('mouseout', 
+  red_piece.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  red_piece.on('click touchstart', 
+  red_piece.on('click touchstart',
     function() {
       this.setFill(red_on);
       objGamePieces[2]['audio'].play();
@@ -206,17 +206,17 @@ window.onload = function () {
         red_piece.setFill(red_off);
         game_board_layer.draw();
         addUserSequence(2);
-      }, 200); 
+      }, 200);
     }
-  ); 
+  );
 
   // Rotate 45 degrees and move appropriately
   red_piece.rotate(Math.PI / 4);
-  red_piece.move(250, -104);     
+  red_piece.move(250, -104);
 
   // Blue button
   var blue_piece = new Kinetic.Shape({
-    drawFunc: 
+    drawFunc:
       function(context) {
         context.beginPath();
         context.moveTo(245, 335);
@@ -233,19 +233,19 @@ window.onload = function () {
     listening:false
   });
 
-  blue_piece.on('mouseover', 
+  blue_piece.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  blue_piece.on('mouseout', 
+  blue_piece.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  blue_piece.on('click touchstart', 
+  blue_piece.on('click touchstart',
     function() {
       this.setFill(blue_on);
       objGamePieces[3]['audio'].play();
@@ -257,15 +257,15 @@ window.onload = function () {
         addUserSequence(3);
       }, 200);
     }
-  ); 
+  );
 
 	// Rotate 45 degrees and move appropriately
 	blue_piece.rotate(Math.PI / 4);
-	blue_piece.move(250, -105);  
+	blue_piece.move(250, -105);
 
   // Start game button
   var start_button = new Kinetic.Shape({
-    drawFunc: 
+    drawFunc:
       function(context) {
         context.beginPath();
         context.moveTo(70, 460);
@@ -281,23 +281,23 @@ window.onload = function () {
     strokeWidth:1
   });
 
-  start_button.on('mouseover', 
+  start_button.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  start_button.on('mouseout', 
+  start_button.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  start_button.on('click touchstart', 
+  start_button.on('click touchstart',
     function() {
       startGame();
     }
-  ); 
+  );
 
   // Text in the start button
   var button_text = new Kinetic.Text({
@@ -307,26 +307,26 @@ window.onload = function () {
     fontSize:15,
     fill:'#343434',
     fontFamily:'Arial'
-  }); 
+  });
 
   // Same as start button shape
-  button_text.on('mouseover', 
+  button_text.on('mouseover',
     function() {
       document.body.style.cursor = 'pointer';
     }
   );
 
-  button_text.on('mouseout', 
+  button_text.on('mouseout',
     function() {
       document.body.style.cursor = 'default';
     }
   );
 
-  button_text.on('click touchstart', 
+  button_text.on('click touchstart',
     function() {
       startGame();
     }
-  ); 
+  );
 
   // Score
   var score_text = new Kinetic.Text({
@@ -418,7 +418,7 @@ window.onload = function () {
       'color_on':blue_on,
       'color_off':blue_off
     }
-  }; 
+  };
 
   /**
    * Starts a new instance of the game
@@ -462,7 +462,7 @@ window.onload = function () {
       var user_sequence_location = user_sequence.length -1; // Sequence location (1st, 2nd, 4th, etc.)
 
       if (game_sequence[user_sequence_location] === user_sequence[user_sequence_location]) { // Technically do nothing
-        
+
         if (user_sequence.length === game_sequence.length) { // Add another game piece to the sequence
           disableGamePieces();
           updateScore(user_sequence.length);
@@ -485,7 +485,7 @@ window.onload = function () {
     /**
      * Add one to the score of sequences memorized
      *
-     * @param {String} The score text   
+     * @param {String} The score text
     **/
     updateScore = function (s) {
       score_text.setText(s);
@@ -534,7 +534,7 @@ window.onload = function () {
       objGamePieces[key]['game_piece'].setFill(objGamePieces[key]['color_off']);
       game_board_layer.draw();
     }
-  }   
+  }
 
   /**
    * Disable all game piece event handlers
@@ -553,14 +553,14 @@ window.onload = function () {
   **/
   function showGamePiece (objGamePiece) {
 
-    objGamePiece.game_piece.setFill(objGamePiece.color_on); 
+    objGamePiece.game_piece.setFill(objGamePiece.color_on);
     game_board_layer.draw();
 
     objGamePiece.audio.play();
 
-    setTimeout(function () { 
-      objGamePiece.game_piece.setFill(objGamePiece.color_off); 
-      game_board_layer.draw(); 
+    setTimeout(function () {
+      objGamePiece.game_piece.setFill(objGamePiece.color_off);
+      game_board_layer.draw();
     }, 500);
   }
 
@@ -580,5 +580,5 @@ window.onload = function () {
         clearInterval(seqInterator);
       }
     }, 750);
-  }  
+  }
 }
