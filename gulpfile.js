@@ -75,9 +75,10 @@ gulp.task('default', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/js/game.js',
-    [
-      'minify-memory-game-js',
-      'concat-all-js'
-  ]);
+  gulp.watch('src/js/game.js', function () {
+    runSequence(
+      ['minify-memory-game-js'],
+      ['concat-all-js']
+    );
+  });
 });
