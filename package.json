@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Mike Petruniak <mike.petruniak@gmail.com>",
   "devDependencies": {
-    "bower": "^1.8.0",
+    "bower": "^1.8.8",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
